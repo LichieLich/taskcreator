@@ -1,0 +1,13 @@
+jira:
+  jira_login: 
+  jira_password: 
+  epic_key: 
+  component: 
+testit:
+  # Токен для работы с API
+  token: 
+  host: 
+  # Id проекта в TestIt
+  project: 
+  # Id аттрибута для поля "Задача АТ". В разных проектах может быть разным
+  task_at_attr_id: 
