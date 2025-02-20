@@ -10,8 +10,10 @@ jira_adapter = JiraAdapter.new
 testit_adapter = TestitAdapter.new
 
 IO.read('tests.txt').split("\n").each do |test_id|
+  next if test_id[0] == '#'
+  p test_id
   # Забрать из тестит содержимое теста
-  testit_case = testit_adapter.get_test_attributes(test_id)
+  testit_case = testit_adapter.get_test_attributes(test_id.strip)
 
   # Страховка от перезаписи
   unless testit_case.full_body['attributes'][testit_attr_id].nil?
@@ -25,4 +27,5 @@ IO.read('tests.txt').split("\n").each do |test_id|
   testit_case.full_body['attributes'][testit_attr_id] =
     jira_adapter.find_task_key_by_summary("#{testit_case.id} #{testit_case.name}")
   testit_adapter.update_case(testit_case)
+  puts
 end
