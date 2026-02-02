@@ -1,12 +1,16 @@
 jira:
   jira_login: 
   jira_password: 
-  epic_key: 
+  epic_key: QA-14846
   component: 
+  # 10905 - Разработка АТ, 10002 - Задача
+  issue_type: 10905
+  # Поле "Тип работ". Новый тест - 18730, Актуалзиация - 18731
+  type_of_work: 18730
 testit:
   # Токен для работы с API
   token: 
-  host: 
+  host: 'https://testit.mos.ru/'
   # Id проекта в TestIt
   project: 
   # Id аттрибута для поля "Задача АТ". В разных проектах может быть разным
